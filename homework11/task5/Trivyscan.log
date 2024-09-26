@@ -1,0 +1,149 @@
+
+ubuntu:jammy-20240911.1 (ubuntu 22.04)
+======================================
+Total: 40 (UNKNOWN: 0, LOW: 32, MEDIUM: 8, HIGH: 0, CRITICAL: 0)
+
+┌──────────────────┬────────────────┬──────────┬──────────┬──────────────────────────┬───────────────┬─────────────────────────────────────────────────────────────┐
+│     Library      │ Vulnerability  │ Severity │  Status  │    Installed Version     │ Fixed Version │                            Title                            │
+├──────────────────┼────────────────┼──────────┼──────────┼──────────────────────────┼───────────────┼─────────────────────────────────────────────────────────────┤
+│ coreutils        │ CVE-2016-2781  │ LOW      │ affected │ 8.32-4.1ubuntu1.2        │               │ coreutils: Non-privileged session can escape to the parent  │
+│                  │                │          │          │                          │               │ session in chroot                                           │
+│                  │                │          │          │                          │               │ https://avd.aquasec.com/nvd/cve-2016-2781                   │
+├──────────────────┼────────────────┼──────────┤          ├──────────────────────────┼───────────────┼─────────────────────────────────────────────────────────────┤
+│ gcc-12-base      │ CVE-2023-4039  │ MEDIUM   │          │ 12.3.0-1ubuntu1~22.04    │               │ gcc: -fstack-protector fails to guard dynamic stack         │
+│                  │                │          │          │                          │               │ allocations on ARM64                                        │
+│                  │                │          │          │                          │               │ https://avd.aquasec.com/nvd/cve-2023-4039                   │
+│                  ├────────────────┼──────────┤          │                          ├───────────────┼─────────────────────────────────────────────────────────────┤
+│                  │ CVE-2022-27943 │ LOW      │          │                          │               │ binutils: libiberty/rust-demangle.c in GNU GCC 11.2 allows  │
+│                  │                │          │          │                          │               │ stack exhaustion in demangle_const                          │
+│                  │                │          │          │                          │               │ https://avd.aquasec.com/nvd/cve-2022-27943                  │
+├──────────────────┼────────────────┤          │          ├──────────────────────────┼───────────────┼─────────────────────────────────────────────────────────────┤
+│ gpgv             │ CVE-2022-3219  │          │          │ 2.2.27-3ubuntu2.1        │               │ gnupg: denial of service issue (resource consumption) using │
+│                  │                │          │          │                          │               │ compressed packets                                          │
+│                  │                │          │          │                          │               │ https://avd.aquasec.com/nvd/cve-2022-3219                   │
+├──────────────────┼────────────────┤          │          ├──────────────────────────┼───────────────┼─────────────────────────────────────────────────────────────┤
+│ libc-bin         │ CVE-2016-20013 │          │          │ 2.35-0ubuntu3.8          │               │ sha256crypt and sha512crypt through 0.6 allow attackers to  │
+│                  │                │          │          │                          │               │ cause a denial of...                                        │
+│                  │                │          │          │                          │               │ https://avd.aquasec.com/nvd/cve-2016-20013                  │
+├──────────────────┤                │          │          │                          ├───────────────┤                                                             │
+│ libc6            │                │          │          │                          │               │                                                             │
+│                  │                │          │          │                          │               │                                                             │
+│                  │                │          │          │                          │               │                                                             │
+├──────────────────┼────────────────┼──────────┤          ├──────────────────────────┼───────────────┼─────────────────────────────────────────────────────────────┤
+│ libgcc-s1        │ CVE-2023-4039  │ MEDIUM   │          │ 12.3.0-1ubuntu1~22.04    │               │ gcc: -fstack-protector fails to guard dynamic stack         │
+│                  │                │          │          │                          │               │ allocations on ARM64                                        │
+│                  │                │          │          │                          │               │ https://avd.aquasec.com/nvd/cve-2023-4039                   │
+│                  ├────────────────┼──────────┤          │                          ├───────────────┼─────────────────────────────────────────────────────────────┤
+│                  │ CVE-2022-27943 │ LOW      │          │                          │               │ binutils: libiberty/rust-demangle.c in GNU GCC 11.2 allows  │
+│                  │                │          │          │                          │               │ stack exhaustion in demangle_const                          │
+│                  │                │          │          │                          │               │ https://avd.aquasec.com/nvd/cve-2022-27943                  │
+├──────────────────┼────────────────┼──────────┤          ├──────────────────────────┼───────────────┼─────────────────────────────────────────────────────────────┤
+│ libgcrypt20      │ CVE-2024-2236  │ MEDIUM   │          │ 1.9.4-3ubuntu3           │               │ libgcrypt: vulnerable to Marvin Attack                      │
+│                  │                │          │          │                          │               │ https://avd.aquasec.com/nvd/cve-2024-2236                   │
+├──────────────────┼────────────────┤          │          ├──────────────────────────┼───────────────┼─────────────────────────────────────────────────────────────┤
+│ libgssapi-krb5-2 │ CVE-2024-26462 │          │          │ 1.19.2-2ubuntu0.4        │               │ krb5: Memory leak at /krb5/src/kdc/ndr.c                    │
+│                  │                │          │          │                          │               │ https://avd.aquasec.com/nvd/cve-2024-26462                  │
+│                  ├────────────────┼──────────┤          │                          ├───────────────┼─────────────────────────────────────────────────────────────┤
+│                  │ CVE-2024-26458 │ LOW      │          │                          │               │ krb5: Memory leak at /krb5/src/lib/rpc/pmap_rmt.c           │
+│                  │                │          │          │                          │               │ https://avd.aquasec.com/nvd/cve-2024-26458                  │
+│                  ├────────────────┤          │          │                          ├───────────────┼─────────────────────────────────────────────────────────────┤
+│                  │ CVE-2024-26461 │          │          │                          │               │ krb5: Memory leak at /krb5/src/lib/gssapi/krb5/k5sealv3.c   │
+│                  │                │          │          │                          │               │ https://avd.aquasec.com/nvd/cve-2024-26461                  │
+├──────────────────┼────────────────┼──────────┤          │                          ├───────────────┼─────────────────────────────────────────────────────────────┤
+│ libk5crypto3     │ CVE-2024-26462 │ MEDIUM   │          │                          │               │ krb5: Memory leak at /krb5/src/kdc/ndr.c                    │
+│                  │                │          │          │                          │               │ https://avd.aquasec.com/nvd/cve-2024-26462                  │
+│                  ├────────────────┼──────────┤          │                          ├───────────────┼─────────────────────────────────────────────────────────────┤
+│                  │ CVE-2024-26458 │ LOW      │          │                          │               │ krb5: Memory leak at /krb5/src/lib/rpc/pmap_rmt.c           │
+│                  │                │          │          │                          │               │ https://avd.aquasec.com/nvd/cve-2024-26458                  │
+│                  ├────────────────┤          │          │                          ├───────────────┼─────────────────────────────────────────────────────────────┤
+│                  │ CVE-2024-26461 │          │          │                          │               │ krb5: Memory leak at /krb5/src/lib/gssapi/krb5/k5sealv3.c   │
+│                  │                │          │          │                          │               │ https://avd.aquasec.com/nvd/cve-2024-26461                  │
+├──────────────────┼────────────────┼──────────┤          │                          ├───────────────┼─────────────────────────────────────────────────────────────┤
+│ libkrb5-3        │ CVE-2024-26462 │ MEDIUM   │          │                          │               │ krb5: Memory leak at /krb5/src/kdc/ndr.c                    │
+│                  │                │          │          │                          │               │ https://avd.aquasec.com/nvd/cve-2024-26462                  │
+│                  ├────────────────┼──────────┤          │                          ├───────────────┼─────────────────────────────────────────────────────────────┤
+│                  │ CVE-2024-26458 │ LOW      │          │                          │               │ krb5: Memory leak at /krb5/src/lib/rpc/pmap_rmt.c           │
+│                  │                │          │          │                          │               │ https://avd.aquasec.com/nvd/cve-2024-26458                  │
+│                  ├────────────────┤          │          │                          ├───────────────┼─────────────────────────────────────────────────────────────┤
+│                  │ CVE-2024-26461 │          │          │                          │               │ krb5: Memory leak at /krb5/src/lib/gssapi/krb5/k5sealv3.c   │
+│                  │                │          │          │                          │               │ https://avd.aquasec.com/nvd/cve-2024-26461                  │
+├──────────────────┼────────────────┼──────────┤          │                          ├───────────────┼─────────────────────────────────────────────────────────────┤
+│ libkrb5support0  │ CVE-2024-26462 │ MEDIUM   │          │                          │               │ krb5: Memory leak at /krb5/src/kdc/ndr.c                    │
+│                  │                │          │          │                          │               │ https://avd.aquasec.com/nvd/cve-2024-26462                  │
+│                  ├────────────────┼──────────┤          │                          ├───────────────┼─────────────────────────────────────────────────────────────┤
+│                  │ CVE-2024-26458 │ LOW      │          │                          │               │ krb5: Memory leak at /krb5/src/lib/rpc/pmap_rmt.c           │
+│                  │                │          │          │                          │               │ https://avd.aquasec.com/nvd/cve-2024-26458                  │
+│                  ├────────────────┤          │          │                          ├───────────────┼─────────────────────────────────────────────────────────────┤
+│                  │ CVE-2024-26461 │          │          │                          │               │ krb5: Memory leak at /krb5/src/lib/gssapi/krb5/k5sealv3.c   │
+│                  │                │          │          │                          │               │ https://avd.aquasec.com/nvd/cve-2024-26461                  │
+├──────────────────┼────────────────┤          │          ├──────────────────────────┼───────────────┼─────────────────────────────────────────────────────────────┤
+│ libncurses6      │ CVE-2023-45918 │          │          │ 6.3-2ubuntu0.1           │               │ ncurses: NULL pointer dereference in tgetstr in             │
+│                  │                │          │          │                          │               │ tinfo/lib_termcap.c                                         │
+│                  │                │          │          │                          │               │ https://avd.aquasec.com/nvd/cve-2023-45918                  │
+│                  ├────────────────┤          │          │                          ├───────────────┼─────────────────────────────────────────────────────────────┤
+│                  │ CVE-2023-50495 │          │          │                          │               │ ncurses: segmentation fault via _nc_wrap_entry()            │
+│                  │                │          │          │                          │               │ https://avd.aquasec.com/nvd/cve-2023-50495                  │
+├──────────────────┼────────────────┤          │          │                          ├───────────────┼─────────────────────────────────────────────────────────────┤
+│ libncursesw6     │ CVE-2023-45918 │          │          │                          │               │ ncurses: NULL pointer dereference in tgetstr in             │
+│                  │                │          │          │                          │               │ tinfo/lib_termcap.c                                         │
+│                  │                │          │          │                          │               │ https://avd.aquasec.com/nvd/cve-2023-45918                  │
+│                  ├────────────────┤          │          │                          ├───────────────┼─────────────────────────────────────────────────────────────┤
+│                  │ CVE-2023-50495 │          │          │                          │               │ ncurses: segmentation fault via _nc_wrap_entry()            │
+│                  │                │          │          │                          │               │ https://avd.aquasec.com/nvd/cve-2023-50495                  │
+├──────────────────┼────────────────┤          │          ├──────────────────────────┼───────────────┼─────────────────────────────────────────────────────────────┤
+│ libpcre3         │ CVE-2017-11164 │          │          │ 2:8.39-13ubuntu0.22.04.1 │               │ pcre: OP_KETRMAX feature in the match function in           │
+│                  │                │          │          │                          │               │ pcre_exec.c                                                 │
+│                  │                │          │          │                          │               │ https://avd.aquasec.com/nvd/cve-2017-11164                  │
+├──────────────────┼────────────────┤          │          ├──────────────────────────┼───────────────┼─────────────────────────────────────────────────────────────┤
+│ libssl3          │ CVE-2024-41996 │          │          │ 3.0.2-0ubuntu1.18        │               │ openssl: remote attackers (from the client side) to trigger │
+│                  │                │          │          │                          │               │ unnecessarily expensive server-side...                      │
+│                  │                │          │          │                          │               │ https://avd.aquasec.com/nvd/cve-2024-41996                  │
+├──────────────────┼────────────────┼──────────┤          ├──────────────────────────┼───────────────┼─────────────────────────────────────────────────────────────┤
+│ libstdc++6       │ CVE-2023-4039  │ MEDIUM   │          │ 12.3.0-1ubuntu1~22.04    │               │ gcc: -fstack-protector fails to guard dynamic stack         │
+│                  │                │          │          │                          │               │ allocations on ARM64                                        │
+│                  │                │          │          │                          │               │ https://avd.aquasec.com/nvd/cve-2023-4039                   │
+│                  ├────────────────┼──────────┤          │                          ├───────────────┼─────────────────────────────────────────────────────────────┤
+│                  │ CVE-2022-27943 │ LOW      │          │                          │               │ binutils: libiberty/rust-demangle.c in GNU GCC 11.2 allows  │
+│                  │                │          │          │                          │               │ stack exhaustion in demangle_const                          │
+│                  │                │          │          │                          │               │ https://avd.aquasec.com/nvd/cve-2022-27943                  │
+├──────────────────┼────────────────┤          │          ├──────────────────────────┼───────────────┼─────────────────────────────────────────────────────────────┤
+│ libsystemd0      │ CVE-2023-7008  │          │          │ 249.11-0ubuntu3.12       │               │ systemd-resolved: Unsigned name response in signed zone is  │
+│                  │                │          │          │                          │               │ not refused when DNSSEC=yes...                              │
+│                  │                │          │          │                          │               │ https://avd.aquasec.com/nvd/cve-2023-7008                   │
+├──────────────────┼────────────────┤          │          ├──────────────────────────┼───────────────┼─────────────────────────────────────────────────────────────┤
+│ libtinfo6        │ CVE-2023-45918 │          │          │ 6.3-2ubuntu0.1           │               │ ncurses: NULL pointer dereference in tgetstr in             │
+│                  │                │          │          │                          │               │ tinfo/lib_termcap.c                                         │
+│                  │                │          │          │                          │               │ https://avd.aquasec.com/nvd/cve-2023-45918                  │
+│                  ├────────────────┤          │          │                          ├───────────────┼─────────────────────────────────────────────────────────────┤
+│                  │ CVE-2023-50495 │          │          │                          │               │ ncurses: segmentation fault via _nc_wrap_entry()            │
+│                  │                │          │          │                          │               │ https://avd.aquasec.com/nvd/cve-2023-50495                  │
+├──────────────────┼────────────────┤          │          ├──────────────────────────┼───────────────┼─────────────────────────────────────────────────────────────┤
+│ libudev1         │ CVE-2023-7008  │          │          │ 249.11-0ubuntu3.12       │               │ systemd-resolved: Unsigned name response in signed zone is  │
+│                  │                │          │          │                          │               │ not refused when DNSSEC=yes...                              │
+│                  │                │          │          │                          │               │ https://avd.aquasec.com/nvd/cve-2023-7008                   │
+├──────────────────┼────────────────┤          │          ├──────────────────────────┼───────────────┼─────────────────────────────────────────────────────────────┤
+│ libzstd1         │ CVE-2022-4899  │          │          │ 1.4.8+dfsg-3build1       │               │ zstd: mysql: buffer overrun in util.c                       │
+│                  │                │          │          │                          │               │ https://avd.aquasec.com/nvd/cve-2022-4899                   │
+├──────────────────┼────────────────┤          │          ├──────────────────────────┼───────────────┼─────────────────────────────────────────────────────────────┤
+│ login            │ CVE-2023-29383 │          │          │ 1:4.8.1-2ubuntu2.2       │               │ shadow: Improper input validation in shadow-utils package   │
+│                  │                │          │          │                          │               │ utility chfn                                                │
+│                  │                │          │          │                          │               │ https://avd.aquasec.com/nvd/cve-2023-29383                  │
+├──────────────────┼────────────────┤          │          ├──────────────────────────┼───────────────┼─────────────────────────────────────────────────────────────┤
+│ ncurses-base     │ CVE-2023-45918 │          │          │ 6.3-2ubuntu0.1           │               │ ncurses: NULL pointer dereference in tgetstr in             │
+│                  │                │          │          │                          │               │ tinfo/lib_termcap.c                                         │
+│                  │                │          │          │                          │               │ https://avd.aquasec.com/nvd/cve-2023-45918                  │
+│                  ├────────────────┤          │          │                          ├───────────────┼─────────────────────────────────────────────────────────────┤
+│                  │ CVE-2023-50495 │          │          │                          │               │ ncurses: segmentation fault via _nc_wrap_entry()            │
+│                  │                │          │          │                          │               │ https://avd.aquasec.com/nvd/cve-2023-50495                  │
+├──────────────────┼────────────────┤          │          │                          ├───────────────┼─────────────────────────────────────────────────────────────┤
+│ ncurses-bin      │ CVE-2023-45918 │          │          │                          │               │ ncurses: NULL pointer dereference in tgetstr in             │
+│                  │                │          │          │                          │               │ tinfo/lib_termcap.c                                         │
+│                  │                │          │          │                          │               │ https://avd.aquasec.com/nvd/cve-2023-45918                  │
+│                  ├────────────────┤          │          │                          ├───────────────┼─────────────────────────────────────────────────────────────┤
+│                  │ CVE-2023-50495 │          │          │                          │               │ ncurses: segmentation fault via _nc_wrap_entry()            │
+│                  │                │          │          │                          │               │ https://avd.aquasec.com/nvd/cve-2023-50495                  │
+├──────────────────┼────────────────┤          │          ├──────────────────────────┼───────────────┼─────────────────────────────────────────────────────────────┤
+│ passwd           │ CVE-2023-29383 │          │          │ 1:4.8.1-2ubuntu2.2       │               │ shadow: Improper input validation in shadow-utils package   │
+│                  │                │          │          │                          │               │ utility chfn                                                │
+│                  │                │          │          │                          │               │ https://avd.aquasec.com/nvd/cve-2023-29383                  │
+└──────────────────┴────────────────┴──────────┴──────────┴──────────────────────────┴───────────────┴─────────────────────────────────────────────────────────────┘
