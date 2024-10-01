@@ -1,0 +1,68 @@
+# More info at https://github.com/pi-hole/docker-pi-hole/ and https://docs.pi-hole.net/
+services:
+  pihole:
+    container_name: pihole
+    image: pihole/pihole:latest
+    # For DHCP it is recommended to remove these ports and instead add: network_mode: "host"
+    ports:
+      - "53:53/tcp"
+      - "53:53/udp"
+      - "67:67/udp" # Only required if you are using Pi-hole as your DHCP server
+      - "80:80/tcp"
+    environment:
+      TZ: 'Europe/Vilnius'
+      WEBPASSWORD: 'root'
+      VIRTUAL_HOST: 'pihole.lan'
+      VIRTUAL_PORT: "80:80"
+    # Volumes store your data between container upgrades
+    volumes:
+      - './etc-pihole:/etc/pihole'
+      - './etc-dnsmasq.d:/etc/dnsmasq.d'
+    #   https://github.com/pi-hole/docker-pi-hole#note-on-capabilities
+    cap_add:
+      - NET_ADMIN # Required if you are using Pi-hole as your DHCP server, else not needed
+    restart: unless-stopped
+  jellyfin:
+    image: jellyfin/jellyfin
+    container_name: jellyfin
+    ports:
+      - "8096:8096"
+    environment:
+      VIRTUAL_HOST: 'jellyfin.lan'
+      VIRTUAL_PORT: "8096:8096"
+    volumes:
+      - /home/albert/courses/CA-Devops/homework13/exercise/jellyfinconfig:/config
+      - /home/albert/courses/CA-Devops/homework13/exercise/jellyfincache:/cache
+      - type: bind
+        source: /mnt/c/Users/alber/Documents/media/Music
+        target: /media
+      - type: bind
+        source: /mnt/c/Users/alber/Documents/media/Video
+        target: /media2
+        read_only: true
+    restart: 'unless-stopped'
+    # Optional - may be necessary for docker healthcheck to pass if running in host network mode
+    extra_hosts:
+      - 'host.docker.internal:host-gateway'
+  uptime-kuma:
+    container_name: kuma
+    image: elestio/uptime-kuma
+    restart: always
+    healthcheck:
+        disable: true
+    environment:
+      VIRTUAL_HOST: 'kuma.lan'
+      VIRTUAL_PORT: "13001:13001" 
+    volumes:
+      - ./data:/app/data
+    ports:
+      - '13001:13001'
+  nginx:
+    image: nginxproxy/nginx-proxy
+    container_name: proxy
+    volumes:
+      - /var/run/docker.sock:/tmp/docker.sock:ro
+    ports:
+      - 81:80
+      - 443:443
+    restart: unless-stopped

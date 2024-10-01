@@ -1,0 +1,26 @@
+# Docker compose file to run a simple flask application with redis database.
+services:
+  app:
+    build: ./app 
+    volumes:
+      - ./app:/app
+    ports:
+      - '5000:5000'
+    env_file:
+      - redis.env
+    depends_on:
+      - redis    
+  redis:
+    image: "redis:alpine"
+    ports:
+      - '6379:6379'
+  worker:
+    build: ./worker
+    volumes:
+      - ./worker:/worker
+    env_file:
+      - redis.env
+    depends_on:
+      - redis
+    environment:
+      - PYTHONUNBUFFERED=1
