@@ -1,0 +1,37 @@
+{
+  "$schema":
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "minlenght": 1
+    },
+    "age": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "grade": {
+      "type": "string",
+      "minlenght": 1
+    },
+    "subjects": {
+      "type": "array",
+      "items": {
+        "type": "string",
+	"minlenght": 1
+        }
+      }
+    }
+},
+{
+  "Student": {
+    "name": "student",
+    "age": 20,
+    "grade": "5th",
+    "subjects":[
+      "subject1",
+      "subject2",
+      "subject3"
+     ]
+   }
+}  

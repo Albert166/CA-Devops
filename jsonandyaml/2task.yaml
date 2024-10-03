@@ -1,0 +1,12 @@
+subject1: &subject1
+      - subject1
+
+Students:
+  student1:
+    name: Student
+    age: 11
+    grade: 5th
+    subjects: 
+      - subject1
+      - subject2
+      - subject3

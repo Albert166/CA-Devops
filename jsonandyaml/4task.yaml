@@ -1,0 +1,10 @@
+# Task 3 converted to yaml
+Person:
+  Name: John Smith
+  Age: 25
+  Adress:
+    City: New York
+    Country: USA
+  hobbies:
+    - reading
+    - cooking

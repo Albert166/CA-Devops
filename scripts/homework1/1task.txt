@@ -1,0 +1,6 @@
+# Explaining bash scripting and comparint it to other script
+Bash script is programming method to write instructions for the bash shell to execute, it's usage can be in:
+1. Automating tasks
+2. Simplifying complex operations
+3. Creating command lines
+4. It's powerfull becouse it directly interacts with linux command line, but it's downside is it's not so great at very complex tasks as other programming languages as python have more advanced features, better performance and readability.
