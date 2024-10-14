@@ -1,0 +1,7 @@
+---
+- hosts: redhat
+  tasks:
+    - name: Fetch a file
+      fetch:
+        src: /home/ansible/Justfile
+        dest: /home/albert/courses/CA-Devops/ca-workrepo/ansible-lab-docker/fetched/

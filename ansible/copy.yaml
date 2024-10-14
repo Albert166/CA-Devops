@@ -1,0 +1,7 @@
+---
+- hosts: redhat
+  tasks:
+    - name: copy a file
+      copy:
+        src: /home/albert/courses/CA-Devops/ca-workrepo/ansible-lab-docker/Justfile
+        dest: /home/ansible/

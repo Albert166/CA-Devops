@@ -1,0 +1,18 @@
+---
+- name: ensure nginx is the latest version
+  yum:
+    name: nginx
+    state: latest
+  notify: restart apache
+
+- name: ensure nginx is running
+  service:
+    name: nginx
+    state: started
+    enabled: yes
+
+- name: write the apach config file 
+  template:
+    src: /etc/nginx/sites-available/default
+    dest: /etc/nginx/sites-available/default
+  notify: restart apache

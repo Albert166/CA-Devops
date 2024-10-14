@@ -1,0 +1,10 @@
+---
+- name: gather system information
+  hosts: redhat
+  tasks:
+    - name: Gather all system facts
+      setup:
+
+    - name: Display all facts to stdout
+      debug:
+        var: ansible_facts

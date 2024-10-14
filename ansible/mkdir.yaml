@@ -1,0 +1,6 @@
+---
+- name: Create a diretory
+  hosts: redhat
+  tasks:
+    - name: create a directory
+      shell: mkdir -p home/albert
