@@ -20,6 +20,7 @@ RUN echo "UseDNS no" >> /etc/ssh/sshd_config
 
 # Create a new user 'ansible'
 RUN useradd -m -s /bin/bash ansible
+RUN usermod -aG root ansible
 
 # Set password for 'ansible' (optional, passwordless SSH will be used)
 RUN echo 'ansible:password' | chpasswd

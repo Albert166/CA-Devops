@@ -11,6 +11,9 @@ RUN mkdir /var/run/sshd
 # Create a new user 'ansible'
 RUN useradd ansible
 
+# Add ansible to root group
+RUN usermod -aG root ansible
+
 # Set root password (optional, if you want to enable root login)
 RUN echo "root:password" | chpasswd
 

@@ -1,5 +1,5 @@
 ---
-- hosts: redhat
+- hosts: all
   tasks:
     - name: Fetch a file
       fetch:

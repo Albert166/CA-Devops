@@ -1,7 +1,12 @@
 ---
-- hosts: redhat
+- hosts: all
   tasks:
-    - name: copy a file
-      copy:
-        src: /home/albert/courses/CA-Devops/ca-workrepo/ansible-lab-docker/Justfile
-        dest: /home/ansible/
+  block:
+    - name: Attempt task
+      command: ls -la /root/var/www
+  rescue:
+    - name: This will run if the block has faile
+      command: ls -la
+  allways:
+    - name: This will allways run
+      debug: msg="This allways executes"
