@@ -1,0 +1,13 @@
+---
+- hosts: all
+  tasks:
+  - name: Attempt and handle errors
+    block:
+      - name: Attempt task
+        command: ls -la usr/www
+    rescue:
+      - name: This will run if the block has failed
+        debug: msg="rescued"
+    always:
+      - name: This will always run
+        debug: msg="This always executes"
