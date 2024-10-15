@@ -14,9 +14,9 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
+    - name: Login to docker
+      run: docker login -u ${{ env.DOCKER_USER }} -p ${{ secrets.DOCKER_PASS}}
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag albertasm/testimage:latest
-    - name: Login to docker
-      run: docker login -u ${{ env.DOCKER_USER }} -p ${{ secret.DOCKER_PASS }}
     - name: Push image
       run: docker push
