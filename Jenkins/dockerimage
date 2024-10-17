@@ -1,0 +1,47 @@
+pipeline {
+    agent any
+
+    environment {
+        DOCKERHUB_CREDENTIALS = credentials('dockerhub-credentials') // Jenkins credential ID for Docker Hub
+        DOCKER_IMAGE_NAME = 'albertasm/jenkinsimage' // Update with your Docker Hub username and image name
+        GITHUB_REPO = 'https://github.com/Albert166/CA-Devops' // Update with your GitHub repository URL
+    }
+
+    stages {
+        stage('Clone Repository') {
+            steps {
+                git url: "${GITHUB_REPO}", branch: 'main' // Replace 'main' with your branch name if different
+            }
+        }
+
+        stage('Build Docker Image') {
+            steps {
+                script {
+                    // Build the Docker image
+                    def app = docker.build("${DOCKER_IMAGE_NAME}:latest")
+                }
+            }
+        }
+
+        stage('Login to Docker Hub') {
+            steps {
+                script {
+                    // Login to Docker Hub
+                    docker.withRegistry('https://index.docker.io/v1/', DOCKERHUB_CREDENTIALS) {
+                        // Push image to Docker Hub
+                        app.push()
+                    }
+                }
+            }
+        }
+    }
+
+    post {
+        success {
+            echo 'Image successfully built and uploaded to Docker Hub!'
+        }
+        failure {
+            echo 'Failed to build or push the Docker image.'
+        }
+    }
+}
