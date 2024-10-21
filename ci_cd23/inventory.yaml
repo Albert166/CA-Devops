@@ -1,0 +1,14 @@
+all:
+  hosts:
+    vm1:
+      ansible_port: 22
+      ansible_host: 74.248.153.217
+      ansible_user: albert
+    vm2:
+      ansible_port: 22
+      ansible_host: 74.248.155.63
+      ansible_user: albert
+    vm3:
+      ansible_port: 22
+      ansible_host: 74.248.154.70
+      ansible_user: albert

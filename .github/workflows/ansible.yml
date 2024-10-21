@@ -1,0 +1,22 @@
+name: Update azure vm with ansible
+
+on:
+    workflow_dispatch:
+
+jobs:
+  - name: Run playbook
+    uses: aimerib/ansible-playwright@v2
+    with:
+      # Required, playbook filepath
+      playbook: update.yml
+      # Optional, directory where playbooks live
+      directory: ./ci_cd
+      # Optional, SSH private key
+      key: ${{secrets.SSH_PRIVATE_KEY}}
+      # Optional, literal inventory file contents
+      inventory:
+        [all]
+        74.234.27.141:22
+
+      options:
+        --verbose
