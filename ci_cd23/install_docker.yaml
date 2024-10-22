@@ -46,3 +46,12 @@
     - name: Display Docker version
       debug:
         var: docker_version.stdout
+    
+    - name: Assigning user to docker group
+      user:
+        name: albert
+        groups: docker
+        append: yes
+    
+    - name: Doing so you would have permissions to run docker
+      shell: sudo chmod 666 /var/run/docker.sock
