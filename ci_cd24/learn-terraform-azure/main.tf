@@ -16,7 +16,7 @@ provider "azurerm" {
 
 resource "azurerm_resource_group" "rg" {
   name     = "myTFResourceGroup"
-  location = "polandcentral"
+  location = var.region
 }
 resource "azurerm_storage_account" "alberttfstorage" {
   name                     = "alberttfstorage"
@@ -59,11 +59,11 @@ resource "azurerm_network_interface" "tfinterface" {
 }
 
 
-resource "azurerm_linux_virtual_machine" "tfvm3" {
-  name                = "tfvma3"
+resource "azurerm_linux_virtual_machine" "tfvm" {
+  name                = var.name
   resource_group_name = azurerm_resource_group.rg.name
   location            = azurerm_resource_group.rg.location
-  size                = "Standard_B1s"
+  size                = var.size
   admin_username      = "albert"
   network_interface_ids = [
     azurerm_network_interface.tfinterface.id,
