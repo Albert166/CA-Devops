@@ -1,0 +1,6 @@
+resource_group_name = "rgroup27"
+region = "northeurope"
+virtual_network_name = "vnetwork27"
+subnet_name = "sbnet27"
+vm_name = "vm27"
+machine_size = "Standard_B1ms"
