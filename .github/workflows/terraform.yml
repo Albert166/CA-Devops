@@ -26,10 +26,7 @@ jobs:
           run: |
             az login --service-principal --username ${{ secrets.AZURE_CLIENT_ID }} --password ${{ secrets.AZURE_CLIENT_PASSWORD }} --tenant ${{ secrets.AZURE_TENANT_ID }}
         
-        - name: Initialize Terraform
-          run: |
-            terraform init
-
+            
         - name: Terraform Format
           run: terraform fmt -check
 
@@ -37,6 +34,7 @@ jobs:
         - name: Terraform Plan
           run: |
             cd 27-terraform-workspace
+            terraform init
             terraform workspace select ${{ github.event.inputs.environment }}
             terraform plan -var-file vars.${{ github.event.inputs.environment }}.tfvars -out ${{ github.event.inputs.environment }}.plan
 
