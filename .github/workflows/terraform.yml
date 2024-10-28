@@ -48,5 +48,5 @@ jobs:
           run: |
             cd 27-terraform-workspace
             terraform workspace select ${{ github.event.inputs.environment }}
-            terraform apply "${{ github.event.inputs.environment }}.plan"
+            terraform apply -auto-approve "${{ github.event.inputs.environment }}.plan"
             
