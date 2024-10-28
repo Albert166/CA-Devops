@@ -26,8 +26,8 @@ override.tf.json
 terraform.rc
 
 # Sensitive variable files
-*.tfvars
-*.tfvars.json
+# *.tfvars.json disabled for now
+# *.tfvars.json disabled for now
 
 # Lock file used by Terraform 0.14+
 .terraform.lock.hcl
