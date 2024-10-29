@@ -44,4 +44,4 @@ jobs:
             cd 27-terraform-workspace
             terraform init
             terraform workspace select ${{ github.event.inputs.environment }}
-            terraform destroy
+            terraform destroy -auto-approve
