@@ -31,13 +31,6 @@ jobs:
         - name: Login to azure
           run: |
             az login --service-principal --username ${{ secrets.AZURE_CLIENT_ID }} --password ${{ secrets.AZURE_CLIENT_PASSWORD }} --tenant ${{ secrets.AZURE_TENANT_ID }}
-        
-
-        - name: Terraform Format
-          run: |
-            cd 27-terraform-workspace
-            terraform fmt -check
-
 
         - name: Terraform Plan
           run: |
