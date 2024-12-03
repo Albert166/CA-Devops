@@ -25,6 +25,10 @@ override.tf.json
 .terraformrc
 terraform.rc
 
+# Aws
+awscliv2.zip
+aws
+
 # Sensitive variable files
 # *.tfvars.json disabled for now
 # *.tfvars.json disabled for now
