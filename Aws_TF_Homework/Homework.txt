@@ -1,0 +1,9 @@
+Steps to get it to work:
+
+1. Rename backend file
+2. Change bucket name in variables
+3. Initialze terraform
+4. Plan and apply terraform
+5. Rename backend file to backend.tf 
+6. Initialize terraform again
+7. It works :)

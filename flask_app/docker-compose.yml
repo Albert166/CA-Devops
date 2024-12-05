@@ -1,0 +1,14 @@
+services:
+  web:
+    build: .
+    ports:
+      - "8000:5000"
+    labels:
+      - 'prometheus.io/scrape=true'
+      - 'prometheus.io/port=<metrics-port>'
+  redis:
+    image: "redis:alpine"
+    labels:
+      - 'prometheus.io/scrape=true'
+      - 'prometheus.io/port=<metrics-port>'
+
