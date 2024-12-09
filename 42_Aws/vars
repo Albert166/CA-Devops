@@ -5,10 +5,4 @@ AWS_INTERNET_GATEWAY=igw-01f4653674d8077f0
 AWS_ROUTE_TABLE=rtb-0fbca6e051b5416eb
 AWS_ELASTIC_IP=eipalloc-0a6cb7eda96f5cf7f
 AWS_NAT_GATEWAY=nat-0f59d53cbc2162fa9
-good() {
-        if [[ $? -eq 0 ]]; then
-                echo "Command succeeded"
-        else
-                echo "Command failed"
-        fi
-        }
+
