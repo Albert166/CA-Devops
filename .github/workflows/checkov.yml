@@ -49,9 +49,10 @@ jobs:
       - name: Terraform Plan
         run: |
           terraform init
+          cd 48_terraform_checkov
           terraform plan -var-file=vars.${{ github.event.inputs.environment}}.tfvars
       
       - name: Terraform apply
         run: |
-          cd 27-terraform-workspace
+          cd 48_terraform_checkov
           terraform apply -auto-approve "${{ github.event.inputs.environment }}"
