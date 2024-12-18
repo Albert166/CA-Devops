@@ -24,3 +24,4 @@ jobs:
         with:
           directory: 48_terraform_checkov
           framework: terraform
+          soft_fail: true

@@ -59,6 +59,7 @@ resource "aws_security_group" "https" {
     to_port     = 80
     protocol    = "tcp"
     cidr_blocks = ["88.118.178.202/32"]
+    description = "My http access"
   }
 
   ingress {
@@ -66,6 +67,7 @@ resource "aws_security_group" "https" {
     to_port     = 443
     protocol    = "tcp"
     cidr_blocks = ["88.118.178.202/32"]
+    description = "My https access"
   }
 
   egress {
@@ -73,6 +75,7 @@ resource "aws_security_group" "https" {
     to_port     = 0
     protocol    = "-1"
     cidr_blocks = ["88.118.178.202/32"]
+    description = "My https access"
   }
 
   tags = {
@@ -89,6 +92,7 @@ resource "aws_security_group" "ssh" {
     to_port     = 22
     protocol    = "tcp"
     cidr_blocks = ["88.118.178.202/32"]
+    description = "My ssh access"
   }
   tags = {
     Name = "ssh-security-group-${terraform.workspace}"
@@ -103,8 +107,9 @@ resource "aws_lb" "main" {
   security_groups    = [aws_security_group.https.id, aws_security_group.ssh.id]
   subnets            = [aws_subnet.main-a.id,aws_subnet.main-b.id]
   load_balancer_type = "application"
+  drop_invalid_header_fields = true
 
-  enable_deletion_protection = false
+  enable_deletion_protection = true
   tags = {
     Name = "main-alb-${terraform.workspace}"
   }
