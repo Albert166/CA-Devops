@@ -52,7 +52,7 @@ jobs:
         run: |
           cd 48_terraform_checkov
           terraform init
-          terraform plan -var-file=vars.${{ github.event.inputs.environment}}.tfvars
+          terraform plan -out=vars.${{ github.event.inputs.environment}}.tfvars
       
       - name: Terraform apply
         run: |
