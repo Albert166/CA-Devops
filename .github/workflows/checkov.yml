@@ -49,11 +49,9 @@ jobs:
       - name: Terraform Plan
         run: |
           terraform init
-          terraform workspace select ${{ github.event.inputs.environment}}
           terraform plan -var-file=vars.${{ github.event.inputs.environment}}.tfvars
       
       - name: Terraform apply
         run: |
           cd 27-terraform-workspace
-          terraform workspace select ${{ github.event.inputs.environment }}
           terraform apply -auto-approve "${{ github.event.inputs.environment }}"
