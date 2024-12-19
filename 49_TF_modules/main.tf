@@ -1,25 +1,7 @@
-module "ec2_instance" {
-  source  = "github.com/terraform-aws-modules/terraform-aws-ec2-instance"
-
-  for_each = toset(["first", "second", "third"])
-
-  name = "${each.key}instance"
-
-  instance_type          = var.type
-  key_name               = var.key
-  monitoring             = false
-  vpc_security_group_ids = module.vpc.default_vpc_default_security_group_id
-  subnet_id              = module.vpc.private_subnets[0]
-
-  tags = {
-    Terraform   = "true"
-    Environment = "dev"
-  }
-}
-
 module "vpc" {
   source = "terraform-aws-modules/vpc/aws"
-
+  version = "5.17.0"
+  
   name = "my-vpc"
   cidr = "10.0.0.0/16"
 
@@ -36,3 +18,20 @@ module "vpc" {
   }
 }
 
+module "ec2_instance" {
+  source  = "github.com/terraform-aws-modules/terraform-aws-ec2-instance.git?ref=v5.7.1"
+  for_each = toset(["first", "second", "third"])
+
+  name = "${each.key}instance"
+
+  instance_type          = var.type
+  key_name               = var.key
+  monitoring             = false
+  vpc_security_group_ids = module.vpc.default_vpc_default_security_group_id
+  subnet_id              = module.vpc.private_subnets[0]
+
+  tags = {
+    Terraform   = "true"
+    Environment = "dev"
+  }
+}
