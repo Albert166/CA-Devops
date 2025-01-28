@@ -42,12 +42,7 @@ ingress:
         paths:
           - path: /
             pathType: Prefix
-            backend:
-              service:
-                name: todo
-                port:
-                  number: 80
-  tls: []
+
 
 resources: {}
 
