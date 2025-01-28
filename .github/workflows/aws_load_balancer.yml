@@ -42,8 +42,34 @@ jobs:
           --set serviceAccount.name=aws-load-balancer-controller \
           --set region=${{ env.AWS_REGION }} \
           --set vpcId=$(aws eks describe-cluster --name ${{ env.CLUSTER_NAME }} --query "cluster.resourcesVpcConfig.vpcId" --output text) \
+          --set enableIPTargetType=true \
           -n kube-system
+
+    - name: Create ingress
+      run: |
+        cat <<EOF | kubectl apply -f -
+        apiVersion: networking.k8s.io/v1
+        kind: Ingress
+        metadata:
+          name: public-ingress
+          annotations:
+            kubernetes.io/ingress.class: alb
+            alb.ingress.kubernetes.io/scheme: internet-facing
+            alb.ingress.kubernetes.io/target-type: ip
+        spec:
+          rules:
+          - http:
+              paths:
+              - path: /
+                pathType: Prefix
+                backend:
+                  service:
+                    name: your-service-name # Replace with your service name
+                    port:
+                      number: 80 # Replace with your service port
+        EOF
 
     - name: Verify installation
       run: |
         kubectl get deployment -n kube-system aws-load-balancer-controller
+        kubectl get ingress public-ingress
