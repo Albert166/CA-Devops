@@ -1,0 +1,51 @@
+
+name: Deploy AWS Load Balancer Controller
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+env:
+  AWS_REGION: eu-central-1 # Change to your desired region
+  CLUSTER_NAME: albert-self-mng-bottlerocket # Change to your cluster name
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Configure AWS credentials
+      uses: aws-actions/configure-aws-credentials@v1
+      with:
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws-region: ${{ env.AWS_REGION }}
+
+    - name: Update kubeconfig
+      run: |
+        aws eks update-kubeconfig --name ${{ env.CLUSTER_NAME }} --region ${{ env.AWS_REGION }}
+
+    - name: Add AWS Load Balancer Controller Helm repository
+      run: |
+        helm repo add eks https://aws.github.io/eks-charts
+        helm repo update
+
+    - name: Install AWS Load Balancer Controller
+      run: |
+        kubectl apply -k "github.com/aws/eks-charts/stable/aws-load-balancer-controller/crds?ref=master"
+        
+        helm install aws-load-balancer-controller eks/aws-load-balancer-controller \
+          --set clusterName=${{ env.CLUSTER_NAME }} \
+          --set serviceAccount.create=true \
+          --set serviceAccount.name=aws-load-balancer-controller \
+          --set region=${{ env.AWS_REGION }} \
+          --set vpcId=$(aws eks describe-cluster --name ${{ env.CLUSTER_NAME }} --query "cluster.resourcesVpcConfig.vpcId" --output text) \
+          -n kube-system
+
+    - name: Verify installation
+      run: |
+        kubectl get deployment -n kube-system aws-load-balancer-controller
