@@ -55,7 +55,6 @@ ingress:
             pathType: Prefix
             backend:
               service:
-                name: todo
                 port:
                   number: 80
   tls: []
