@@ -3,7 +3,7 @@ replicaCount: 1
 
 image:
   repository: prydonius/todo
-  pullPolicy: IfNotPresent
+  pullPolicy: IfNotPresent 
   tag: 1.0.0
 
 imagePullSecrets: []
@@ -35,6 +35,8 @@ ingress:
     alb.ingress.kubernetes.io/scheme: internet-facing
     alb.ingress.kubernetes.io/target-type: ip
     alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}]'
+    alb.ingress.kubernetes.io/load-balancer-attributes: idle_timeout.timeout_seconds=60
+    alb.ingress.kubernetes.io/target-group-attributes: deregistration_delay.timeout_seconds=30
   rules:
     - http:
         paths:
