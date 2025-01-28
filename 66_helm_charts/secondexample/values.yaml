@@ -39,6 +39,7 @@ ingress:
         paths:
           - path: /
             pathType: Prefix
+  tls: []
 
 
 resources: {}
