@@ -32,5 +32,4 @@ func main() {
 	// Clear the map
 	clear(m)
 	fmt.Println("map after clear:", m)
-	fmt.Println("map:", m)
 }
