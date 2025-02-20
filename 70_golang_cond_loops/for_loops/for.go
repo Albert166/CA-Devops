@@ -23,7 +23,7 @@ func main() {
 		break
 	}
 
-	for n := range 6 {
+	for n := range 4 {
 		if n%2 == 0 {
 			continue
 		}
