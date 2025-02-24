@@ -1,0 +1,32 @@
+2025-02-24 20:28:12 [INFO] web_server.go:44: Endpoint Hit: homePage
+2025-02-24 20:28:12 [INFO] web_server.go:44: Endpoint Hit: homePage
+2025-02-24 20:28:12 [INFO] web_server.go:123: Endpoint Hit: peoplePage
+2025-02-24 20:28:12 [INFO] web_server.go:44: Endpoint Hit: homePage
+2025-02-24 20:29:46 [INFO] web_server.go:123: Endpoint Hit: peoplePage
+2025-02-24 20:29:46 [INFO] web_server.go:44: Endpoint Hit: homePage
+2025-02-24 20:29:46 [INFO] web_server.go:123: Endpoint Hit: peoplePage
+2025-02-24 20:29:46 [INFO] web_server.go:44: Endpoint Hit: homePage
+2025-02-24 20:29:46 [INFO] web_server.go:123: Endpoint Hit: peoplePage
+2025-02-24 20:29:46 [INFO] web_server.go:44: Endpoint Hit: homePage
+2025-02-24 20:29:46 [INFO] web_server.go:123: Endpoint Hit: peoplePage
+2025-02-24 20:29:46 [INFO] web_server.go:44: Endpoint Hit: homePage
+2025-02-24 20:29:46 [INFO] web_server.go:123: Endpoint Hit: peoplePage
+2025-02-24 20:29:46 [INFO] web_server.go:44: Endpoint Hit: homePage
+2025-02-24 20:29:46 [INFO] web_server.go:123: Endpoint Hit: peoplePage
+2025-02-24 20:29:46 [INFO] web_server.go:44: Endpoint Hit: homePage
+2025-02-24 20:30:12 [INFO] web_server.go:123: Endpoint Hit: peoplePage
+2025-02-24 20:30:12 [INFO] web_server.go:44: Endpoint Hit: homePage
+2025-02-24 20:30:25 [INFO] web_server.go:123: Endpoint Hit: peoplePage
+2025-02-24 20:30:25 [INFO] web_server.go:44: Endpoint Hit: homePage
+2025-02-24 20:30:25 [INFO] web_server.go:123: Endpoint Hit: peoplePage
+2025-02-24 20:30:25 [INFO] web_server.go:44: Endpoint Hit: homePage
+2025-02-24 20:44:40 [ERROR] web_server.go:106: <nil>
+2025-02-24 20:44:40 [INFO] web_server.go:44: Endpoint Hit: homePage
+2025-02-24 20:48:15 [ERROR] web_server.go:108: Error reading CSV file: <nil>
+2025-02-24 20:48:15 [INFO] web_server.go:44: Endpoint Hit: homePage
+2025-02-24 20:50:23 [ERROR] web_server.go:108: Error reading CSV file: <nil>
+2025-02-24 20:50:23 [INFO] web_server.go:44: Endpoint Hit: homePage
+2025-02-24 20:52:18 [ERROR] web_server.go:114: Error reading CSV file: open people.csv: no such file or directory
+2025-02-24 20:52:18 [INFO] web_server.go:44: Endpoint Hit: homePage
+2025-02-24 20:52:18 [INFO] web_server.go:134: Endpoint Hit: peoplePage
+2025-02-24 20:52:18 [INFO] web_server.go:44: Endpoint Hit: homePage
